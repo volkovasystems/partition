@@ -1,0 +1,9 @@
+{
+	"name":"volkova",
+	"version":"0.0.1",
+	"dependencies":{
+		"async":"",
+		"node-uuid":"",
+		"optimist":""
+	}
+}
