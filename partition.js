@@ -87,8 +87,9 @@ var partitionSpace = function partitionSpace( space, callback ){
 
 					//Reality check on the rows.
 					if( config.partitionData.rows <= 0 ){
-						throw new Error( JSON.stringify( { 
-							error: "partition is reduced too much" } ) );
+						callback( new Error( JSON.stringify( { 
+							error: "partition is reduced too much" } ) ) );
+						return;
 					}
 
 					//The next space.
@@ -112,9 +113,10 @@ var partitionSpace = function partitionSpace( space, callback ){
 					if( !!( --config.layerCount ) ){
 						config.partitionData = partitionData;
 						partitionSpace( )( config );
-					}else{
-						callback( config.partitionList );
+						return;
 					}
+					
+					callback( config.partitionList );
 				} );
 		} );
 	}catch( error ){
