@@ -2,7 +2,8 @@
 	@include:
 		{
 			"nth-root": "nthRoot",
-			"class-collection": "Collection"
+			"class-collection": "Collection",
+			"collection-regroup": "collectionRegroup"
 		}
 	@end-include
 	
